@@ -36,4 +36,16 @@ export const decrement= createAction(
 )
 // --------------------------------------------
 
+// --------------------------------------------
+// second effect -----------------------8---------------------
+export const init= createAction(
+    '[Counter] Init'
+)
+export const set= createAction(
+    '[Counter] Set',
+    props<{value:number}>()
+)
+
+// --------------------------------------------
+
 

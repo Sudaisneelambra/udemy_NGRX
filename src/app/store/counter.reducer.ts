@@ -1,6 +1,6 @@
 import {  Action, createReducer, on } from "@ngrx/store";
 // import { CounterAction, INCREMENT, IncrementAction } from "./counter-action";
-import { decrement, increment } from "./counter-action";
+import { decrement, increment, set } from "./counter.action";
 
 
 const initialState=0;
@@ -44,11 +44,21 @@ const initialState=0;
 
 // --------------------------------------------
 // decrement emplemented  ------------4--------------------
+// export const counterReducer= createReducer(
+//     initialState,
+//     on(increment,(state,action)=> state+action.value),
+//     on(decrement,(state,action)=> state-action.value)
+// )
+// --------------------------------------------
+
+
+// --------------------------------------------
+// second effect ------------8--------------------
 export const counterReducer= createReducer(
     initialState,
     on(increment,(state,action)=> state+action.value),
-    on(decrement,(state,action)=> state-action.value)
+    on(decrement,(state,action)=> state-action.value),
+    on(set,(state,action)=> action.value)
 )
 // --------------------------------------------
-
 
